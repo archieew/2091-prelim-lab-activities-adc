@@ -6,7 +6,7 @@ app.get('/', function (req, res) {
 })
 
 app.get('/process_get', function (req, res) { 
-    // Prepare output in JSON format
+// Prepare output in JSON format
     response = {
         first_name: req.query.first_name, 
         last_name:req.query.last_name
@@ -14,4 +14,9 @@ app.get('/process_get', function (req, res) {
         
 console.log(response); 
 res.end(JSON.stringify(response)); 
+});
+
+const port = process.env.PORT || 3000;
+app.listen(port, () => {
+  console.log(`Listening on port ${port}`);
 });
